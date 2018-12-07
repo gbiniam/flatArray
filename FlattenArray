@@ -1,0 +1,29 @@
+package org.biniam.paly;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/*
+ * Write some code, that will flatten an array of arbitrarily nested 
+ * arrays of integers into a flat array of integers. e.g. [[1,2,[3]],4] -> [1,2,3,4]. 
+ */
+public class FlattenArray {
+	private static List<Integer> nonFlatArr = new ArrayList<Integer>();
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		//System.out.println(flattenArray("[[1,2,[3]],4]"));
+
+	}
+
+	public static Object[] flattenArray(String nonFlat){
+		char[] asCharArray= nonFlat.toCharArray();
+		for (char c: asCharArray){
+			if (Character.isDigit(c)){
+				nonFlatArr.add(Character.getNumericValue(c));
+			}
+		}
+		return nonFlatArr.toArray();
+	}
+	
+}
